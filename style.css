@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+}
+
+#panel {
+  width: 350px;
+  height: 500px;
+  background-color: #fff;
+  border-left: 1px solid #ccc;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 50px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#panel.unpinned {
+  position: absolute;
+  transform: translateX(100%);
+  opacity: 0.6;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background-color: #f0f0f0;
+}
+
+.tabs-horizontal button {
+  margin-right: 5px;
+}
+
+.panel-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.tabs-vertical {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  padding: 5px;
+}
+
+.tabs-vertical button {
+  margin-bottom: 5px;
+}
+
+.panel-content {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#nickname {
+  padding: 6px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+#dialogbox {
+  flex: 1;
+  background: #f7f7f7;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+#pinButton {
+  cursor: pointer;
+  font-size: 16px;
+  background: none;
+  border: none;
+}
+
+#pinButton:hover {
+  color: green;
+}
+
+.message-placeholder {
+  color: #666;
+  font-style: italic;
+}

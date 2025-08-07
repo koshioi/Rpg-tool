@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Panel z pinezką</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Panel -->
+<div id="panel" class="pinned">
+  <div class="panel-header">
+    <div class="tabs-horizontal">
+      <button>Tab 1</button>
+      <button>Tab 2</button>
+    </div>
+    <button id="pinButton" title="Przypnij/Odepnij">📌</button>
+  </div>
+
+  <div class="panel-body">
+    <div class="tabs-vertical">
+      <button>Zakładka A</button>
+      <button>Zakładka B</button>
+    </div>
+
+    <div class="panel-content">
+      <label for="nickname">Nick:</label>
+      <input type="text" id="nickname" placeholder="Wpisz nick" />
+
+      <!-- Dialogbox -->
+      <div id="dialogbox">
+        <div class="message-placeholder">
+          (Tutaj będą wyświetlane komunikaty...)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
