@@ -1,13 +1,14 @@
 {
-  "name": "panel-app-dynamic",
+  "name": "always-on-top-panel",
   "version": "1.0.0",
-  "description": "Prawy panel z zakładkami + dynamiczne API (Express)",
-  "main": "server.js",
+  "description": "Pop-up window always on top (Electron) with pin toggle",
+  "main": "main.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "electron ."
   },
+  "author": "",
   "license": "MIT",
-  "dependencies": {
-    "express": "^4.19.2"
+  "devDependencies": {
+    "electron": "^30.0.0"
   }
 }
