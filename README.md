@@ -1,27 +1,44 @@
-# Panel z zakładkami i pinezką
+# Panel z zakładkami (dynamiczny backend + Docker)
 
-Prosty interfejs bocznego panelu po prawej stronie strony WWW, zawierający:
-- Pionowe i poziome zakładki
-- Pole na nick użytkownika
-- Miejsce na przyszły dialogbox (chat)
-- Pinezkę 📌 do przypięcia/odpięcia panelu
+Interfejs panelu po prawej stronie oraz proste, dynamiczne API w Express (Node.js).
+Przygotowane do deploymentu jako **Docker** (np. Render Web Service w trybie Docker).
 
-## Jak uruchomić
+## Struktura
+```
+panel-app-dynamic-docker/
+├─ public/
+│  ├─ index.html
+│  ├─ style.css
+│  └─ script.js
+├─ server.js
+├─ package.json
+├─ Dockerfile
+└─ .dockerignore
+```
 
-1. Sklonuj repozytorium:
-   ```
-   git clone https://github.com/twoj-login/panel-app.git
-   ```
-2. Otwórz `index.html` w przeglądarce.
+## Uruchomienie lokalne (bez Dockera)
+```bash
+npm install
+npm start
+# Aplikacja: http://localhost:3000
+```
 
-## Deployment
+## Uruchomienie lokalne (Docker)
+```bash
+docker build -t panel-app-dynamic .
+docker run -p 3000:3000 -e PORT=3000 panel-app-dynamic
+# Aplikacja: http://localhost:3000
+```
 
-Możesz opublikować stronę np. przez:
-- GitHub Pages
-- Netlify
-- Vercel
-- Render (jako static HTML)
+## Render (Docker)
+1. W repozytorium musi być plik `Dockerfile` (jest w tym projekcie).
+2. W Render utwórz **Web Service** i wybierz **Deploy from a Dockerfile**.
+3. Wskaż to repo/branch.
+4. Port: Render odczyta z `PORT` (domyślnie 3000). Nie ustawiaj Build/Start Command — Dockerfile to określa.
 
-## Przykład działania
+## API
+- `GET /api/ping` – zwraca `{ status, startedAt, now }` jako dowód działania części dynamicznej.
 
-Panel domyślnie jest przypięty (fixed), po kliknięciu pinezki staje się odpięty (absolute).
+## Notatki
+- UI zawiera placeholder *dialogbox* i miejsce na nick. Logika wiadomości nie jest zaimplementowana.
+- W przyszłości można dodać WebSocket/Socket.IO i endpointy do wiadomości.

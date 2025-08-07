@@ -5,8 +5,8 @@ body {
 }
 
 #panel {
-  width: 350px;
-  height: 500px;
+  width: 360px;
+  height: 520px;
   background-color: #fff;
   border-left: 1px solid #ccc;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
@@ -33,9 +33,27 @@ body {
   background-color: #f0f0f0;
 }
 
-.tabs-horizontal button {
-  margin-right: 5px;
+.tabs-horizontal {
+  display: flex;
+  gap: 6px;
 }
+
+.right-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 8px;
+  background: #ddd;
+}
+
+.badge.ok { background: #c6f6d5; }
+.badge.err { background: #fed7d7; }
 
 .panel-body {
   display: flex;
@@ -50,21 +68,31 @@ body {
   padding: 5px;
 }
 
-.tabs-vertical button {
-  margin-bottom: 5px;
+.tab-v, .tab-h {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 6px 8px;
 }
+
+.tab-v.active, .tab-h.active {
+  background: #e6f7ff;
+  border-color: #7dbcea;
+}
+
+.tabs-vertical .tab-v { margin-bottom: 5px; }
 
 .panel-content {
   flex: 1;
   padding: 10px;
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 
 #nickname {
   padding: 6px;
   font-size: 14px;
-  margin-bottom: 10px;
 }
 
 #dialogbox {

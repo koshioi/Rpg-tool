@@ -1,0 +1,13 @@
+{
+  "name": "panel-app-dynamic",
+  "version": "1.0.0",
+  "description": "Prawy panel z zakładkami + dynamiczne API (Express)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

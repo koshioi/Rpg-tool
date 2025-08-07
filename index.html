@@ -2,7 +2,8 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <title>Panel z pinezką</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel z pinezką (dynamic)</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,16 +12,19 @@
 <div id="panel" class="pinned">
   <div class="panel-header">
     <div class="tabs-horizontal">
-      <button>Tab 1</button>
-      <button>Tab 2</button>
+      <button class="tab-h active">Tab 1</button>
+      <button class="tab-h">Tab 2</button>
     </div>
-    <button id="pinButton" title="Przypnij/Odepnij">📌</button>
+    <div class="right-actions">
+      <span id="apiStatus" class="badge">API...</span>
+      <button id="pinButton" title="Przypnij/Odepnij">📌</button>
+    </div>
   </div>
 
   <div class="panel-body">
     <div class="tabs-vertical">
-      <button>Zakładka A</button>
-      <button>Zakładka B</button>
+      <button class="tab-v active">Zakładka A</button>
+      <button class="tab-v">Zakładka B</button>
     </div>
 
     <div class="panel-content">
