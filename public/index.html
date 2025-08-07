@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Panel z pinezką (dynamic)</title>
+  <title>Panel Always-on-Top</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- Panel -->
 <div id="panel" class="pinned">
   <div class="panel-header">
     <div class="tabs-horizontal">
@@ -16,7 +15,7 @@
       <button class="tab-h">Tab 2</button>
     </div>
     <div class="right-actions">
-      <span id="apiStatus" class="badge">API...</span>
+      <span id="pinState" class="badge">PINNED</span>
       <button id="pinButton" title="Przypnij/Odepnij">📌</button>
     </div>
   </div>
@@ -31,7 +30,6 @@
       <label for="nickname">Nick:</label>
       <input type="text" id="nickname" placeholder="Wpisz nick" />
 
-      <!-- Dialogbox -->
       <div id="dialogbox">
         <div class="message-placeholder">
           (Tutaj będą wyświetlane komunikaty...)
@@ -41,6 +39,6 @@
   </div>
 </div>
 
-<script src="script.js"></script>
+<script src="renderer.js"></script>
 </body>
 </html>
