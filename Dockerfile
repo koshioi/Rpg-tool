@@ -1,17 +1,19 @@
-# Używamy oficjalnego obrazu Node.js
-FROM node:18
+# Minimalny obraz Node.js
+FROM node:18-alpine
 
-# Ustawiamy katalog roboczy
+# Katalog roboczy
 WORKDIR /app
 
-# Kopiujemy pliki aplikacji
+# Zależności
+COPY package*.json ./
+RUN npm install --only=production
+
+# Kod aplikacji
 COPY . .
 
-# Instalujemy prosty serwer HTTP
-RUN npm install -g serve
-
-# Ustaw zmienną środowiskową dla portu
+# Port aplikacji
 ENV PORT=3000
+EXPOSE 3000
 
-# Domyślne polecenie - serwowanie zawartości katalogu /app
-CMD ["serve", ".", "-l", "3000"]
+# Start
+CMD ["node", "server.js"]
